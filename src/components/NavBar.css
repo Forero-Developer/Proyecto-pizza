@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 8px 10%;
+    padding: 8px 5%;
     background: orange;
     display: flex;
     justify-content: space-between;
@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 70px;
-    width: 140px; 
+    width: 110px; 
 }
 
 .navbar a {
@@ -25,7 +25,7 @@
     font-size: 18px;
     color: #fff;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 45px;
     
 }
 
