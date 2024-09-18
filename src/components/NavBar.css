@@ -1,0 +1,98 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 10%;
+    background: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    background-image: url('../assets/logo.png'); /* Ajusta la ruta */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70px;
+    width: 140px; 
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinea el formulario a la derecha si hay espacio disponible */
+}
+
+.search-form input[type="text"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #fff; /* Color del borde de la caja de búsqueda */
+  border-radius: 4px;
+  outline: none; /* Elimina el borde azul del foco en algunos navegadores */
+  color: #333; /* Color del texto */
+  background-color: #fff; /* Fondo blanco para el campo de texto */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.search-form input[type="text"]:focus {
+  border-color: #ff8c00; /* Color del borde al enfocar */
+}
+
+.search-form button {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff; /* Color de fondo del botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; /* Espacio entre el campo de búsqueda y el botón */
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.search-form button:hover {
+  background-color: #e07b00; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Estilo para el botón de inicio de sesión */
+.login-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #ffffff; /* Color de fondo del botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  margin-left: 10px; /* Espacio entre el botón de búsqueda y el botón de inicio de sesión */
+}
+.login-button:hover {
+  background-color: #e07b00; /* Color de fondo del botón al pasar el ratón */
+}
