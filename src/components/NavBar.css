@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -20,13 +21,48 @@
     width: 110px; 
 }
 
+
 .navbar a {
     position: relative;
     font-size: 18px;
     color: #fff;
     font-weight: 500;
-    margin-left: 45px;
+    margin-left: 46px;
     
+    
+}
+
+.carritoShop{
+  background-color: white;
+  border-radius: 5px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  
+  width: 42px;
+  margin-left: 86px;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.carritoShop::before{
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: .3s;
+
+  
+  
+}
+
+.carritoShop:hover::before{
+  width: 100%;
+  
 }
 
 .navbar a::before {
