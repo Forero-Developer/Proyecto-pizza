@@ -21,3 +21,11 @@ body {
 a {
   text-decoration: none;
 }
+
+.Card-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 10px;
+}
