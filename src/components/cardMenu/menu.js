@@ -19,6 +19,20 @@ const menu = [
         imgText: "pizza 2",
         txtcomida: "Pizza Familiar ",
         precio: "$50.000"
+    },
+    {
+        id: 4,
+        img: "./src/assets/logo.png",
+        imgText: "pizza 2",
+        txtcomida: "Pizza Familiar ",
+        precio: "$50.000"
+    },
+    {
+        id: 5,
+        img: "./src/assets/logo.png",
+        imgText: "pizza 2",
+        txtcomida: "Pizza Familiar ",
+        precio: "$50.000"
     }
 ]
 
