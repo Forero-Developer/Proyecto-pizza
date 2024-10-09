@@ -32,38 +32,6 @@
     
 }
 
-.carritoShop{
-  background-color: white;
-  border-radius: 5px;
-  border: 0;
-  display: flex;
-  align-items: center;
-  
-  width: 42px;
-  margin-left: 86px;
-  position: relative;
-  cursor: pointer;
-
-}
-
-.carritoShop::before{
-  content: "";
-  position: absolute;
-  top: 120%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: .3s;
-
-  
-  
-}
-
-.carritoShop:hover::before{
-  width: 100%;
-  
-}
 
 .navbar a::before {
     content: "";
@@ -131,4 +99,20 @@
 }
 .login-button:hover {
   background-color: #e07b00; /* Color de fondo del botón al pasar el ratón */
+}
+
+@media (max-width: 1302px) {
+  .header, .login-button {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente (si es necesario) */
+    flex-direction: column;  /* Opcional, si deseas que los elementos estén en columna */
+    text-align: center;      /* Para centrar texto */
+  }
+}
+
+@media (max-width: 1302px) {
+  .search-form{
+    margin: 0;
+  }
 }
