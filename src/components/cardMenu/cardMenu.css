@@ -1,3 +1,12 @@
+/* .contenedor-padre{
+    display: flex;
+    background-color: gray;
+    width: 180px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+} */
+
 .container-target{
     display: flex;
     flex-direction: column;
@@ -9,6 +18,7 @@
     position: relative;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out;
+    
     
 }
 .container-target:hover{

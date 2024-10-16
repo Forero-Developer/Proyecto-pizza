@@ -23,9 +23,16 @@ a {
 }
 
 .Card-menu{
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 140px;
+  background-color: gray;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  gap: 10px;
+  width: 68%;
+  padding: 40px;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  /* height: 100vh; */
+  gap: 30px;
 }
