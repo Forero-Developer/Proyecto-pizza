@@ -108,11 +108,13 @@
     align-items: center;     /* Centra verticalmente (si es necesario) */
     flex-direction: column;  /* Opcional, si deseas que los elementos estén en columna */
     text-align: center;      /* Para centrar texto */
+    
   }
 }
 
 @media (max-width: 1302px) {
   .search-form{
     margin: 0;
+    padding: 8px;
   }
 }
