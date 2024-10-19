@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import CardMenu from "./components/cardMenu/CardMenu"
-// import menu from "./components/cardMenu/menu"
 import NavBar from "./components/NavBar/NavBar"
 
 const App = () => {
