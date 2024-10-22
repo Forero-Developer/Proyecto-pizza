@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  #backend:
+    #build: ./backend-pizza
+    #ports:
+      #- "5000:5000"
+    #volumes:
+      #- ./backend-pizza:/app
+    #restart: always
+
+  frontend:
+    build: ./frontend-pizza
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend-pizza:/app
+    restart: always
