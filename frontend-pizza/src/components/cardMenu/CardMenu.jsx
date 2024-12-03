@@ -8,7 +8,7 @@ const CardMenu = ({ img = "./src/assets/pizzaaa.jpg", imgText, txtComida, descri
         <div className="nombre-precio">
             <h3>{txtComida}</h3>
             <p className="descripcion">{descripcion}</p>
-            <p>{precio}</p>
+            <p className="precio">${precio}</p>
         </div>
             <button className="bton-carrito">Agregar al carrito</button>
       </div>

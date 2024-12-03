@@ -1,50 +1,24 @@
-import { useEffect, useState } from "react"
-import CardMenu from "./components/cardMenu/CardMenu"
-import NavBar from "./components/NavBar/NavBar"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import Menu from './components/cardMenu/menu';
+import Inicio from './components/NavInicio/inicio';
+import Carrito from './components/Carrito/Carrito';
+// Componente de la página de inicio
 
 const App = () => {
-
-  const [productos, setProductos] = useState([]);
-  
-  const fetchProductos = async () => {
-    try{
-      const response = await fetch('http://localhost:3000/api/productos')
-      if(!response.ok){
-        throw new Error('Error al obtener los datos del servidor!!')
-      }
-      const data = await response.json()
-      console.log(data)
-      setProductos(data)
-    } catch (error) {
-      console.log('Error al obtener los productos!!');
-    }
-  };
-
-    useEffect(() => {
-      fetchProductos();
-    }, [])
   return (
-    <div>
+    <Router>
       <header>
-      <NavBar />
+        <NavBar />
       </header>
-      <section className="Card-menu">
-      {productos.length > 0 ? (
-          productos.map((producto, index) => (
-            <CardMenu
-              key={index}
-              img={producto.imagen}      
-              descripcion={producto.descripcion}    
-              txtComida={producto.nombre || "Descripción no disponible"}
-              precio={producto.precio }
-            />
-          ))
-        ) : (
-          <p>No se encontraron productos.</p>
-        )}
-      </section>
-    </div>
-  )
-}
+      
+      <Routes>
+        <Route path="/Acerca-de-nostros" element={<Inicio />} />
+        <Route path="/Menu" element={<Menu />} />  {/* Usa el componente separado */}
+      </Routes>
+      
+    </Router>
+  );
+};
 
-export default App
+export default App;

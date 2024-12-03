@@ -1,28 +1,23 @@
+import { Link } from 'react-router-dom';
 import './NavBar.css'
 const NavBar = () => {
   return (
-    <div>
-      <header className="header">
-        <div href ="/" className="logo"></div>
-        
+    <header className="header">
+      <div className="logo"></div>
 
-        <nav className="navbar">
-            <a href='/'>Inicio</a>
-            <a href='/'>Menu</a>
-            <a href='/'>Carrito</a>
-            <a href='/'>Restaurante</a>
-            <a href='/'>Contacto</a>
-        </nav>
+      <nav className="navbar">
+        <Link to="/Acerca-de-nostros">Acerca de nostros</Link>
+        <Link to="/Menu">Menú</Link>
+        <Link to="/contacto">Contacto</Link>
+      </nav>
 
-        <form className="search-form" action="/search" method="get">
-        <input type="text" name="query" placeholder="Buscar..."></input>
+      <form className="search-form" action="/search" method="get">
+        <input type="text" name="query" placeholder="Buscar..." />
         <button type="submit">Buscar</button>
         <button className="login-button">Iniciar sesión</button>
-        </form>
-      </header>
+      </form>
+    </header>
+  );
+};
 
-    </div>
-  )
-}
-
-export default NavBar
+export default NavBar;

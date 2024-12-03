@@ -1,0 +1,49 @@
+/* General styles for the Inicio component */
+.inicio-container {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Header styles */
+  .inicio-header {
+    background-color: #ff6347; /* Tomato color */
+    /* padding: 20px; */
+    color: white;
+    width: 900px;
+    margin-top: 100px;
+    border-radius: 10px;
+  }
+  
+  /* Main heading styling */
+  .inicio-header h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Slogan styling */
+  .eslogan {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #ffe4e1; /* Light pinkish color */
+    margin-top: 20px;
+  }
+  
+  /* Image styling */
+  img {
+    width: 900px;
+    border-radius: 10px;  
+    height: 300px;
+  
+  }
+  
