@@ -1,40 +1,30 @@
-// src/components/Carrito/Carrito.jsx
-import "./Carrito.css"
-import { useState, useEffect } from "react";
+import { useCarrito } from "./ContextoCarrito";
+import "./Carrito.css";
 
 const Carrito = () => {
-  const [productosCarrito, setProductosCarrito] = useState([]);
+  const { carrito, eliminarProducto, resetearCarrito } = useCarrito();
 
-  // Cargar los productos del carrito desde el almacenamiento local
-  useEffect(() => {
-    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
-    setProductosCarrito(carritoGuardado);
-  }, []);
-
-  // Eliminar producto del carrito
-  const eliminarProducto = (id) => {
-    const productosActualizados = productosCarrito.filter(producto => producto.id !== id);
-    setProductosCarrito(productosActualizados);
-    localStorage.setItem("carrito", JSON.stringify(productosActualizados)); // Actualizar almacenamiento local
-  };
-
-  // Calcular el total del carrito
   const calcularTotal = () => {
-    return productosCarrito.reduce((total, producto) => total + producto.precio, 0).toFixed(2);
+    return carrito
+      .reduce((total, producto) => total + producto.precio * producto.cantidad, 0)
+      .toFixed(2);
   };
 
   return (
-    <div className="carrito">
+    <div>
       <h2>Mi Carrito</h2>
-      {productosCarrito.length > 0 ? (
+      {carrito.length > 0 ? (
         <>
           <ul>
-            {productosCarrito.map((producto) => (
-              <li key={producto.id} className="producto-carrito">
+            {carrito.map((producto) => (
+              <li key={producto.id_producto} className="producto-carrito">
                 <img src={producto.imagen} alt={producto.nombre} />
-                <span>{producto.nombre}</span>
-                <span>${producto.precio}</span>
-                <button onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
+                <div>
+                  <span>{producto.nombre}</span>
+                  <span>${producto.precio}</span>
+                  <span>Cantidad: {producto.cantidad}</span>
+                </div>
+                <button onClick={() => eliminarProducto(producto.id_producto)}>Eliminar</button> {/* Cambio aquí */}
               </li>
             ))}
           </ul>
@@ -42,6 +32,7 @@ const Carrito = () => {
             <h3>Total: ${calcularTotal()}</h3>
           </div>
           <button className="finalizar-compra">Finalizar Compra</button>
+          <button onClick={resetearCarrito}>Vaciar Carrito</button>
         </>
       ) : (
         <p>No hay productos en el carrito.</p>

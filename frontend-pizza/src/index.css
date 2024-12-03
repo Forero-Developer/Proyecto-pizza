@@ -10,29 +10,16 @@
 html, body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
 }
 
 body {
-  background: url('./assets/fondoPizza.jpg') no-repeat;
+  background: #FFAF4E;
   background-size: cover;
 }
 a {
   text-decoration: none;
 }
 
-.Card-menu{
-  border-radius: 10px;
-  margin-left: 20px;
-  margin-top: 140px;
-  background-color: gray;
-  display: flex;
-  width: 68%;
-  padding: 40px;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  justify-content: center;
-  /* height: 100vh; */
-  gap: 30px;
-}
