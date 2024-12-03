@@ -1,24 +1,30 @@
-/* .contenedor-padre{
+.Card-menu{
+    border-radius: 10px;
+    /* margin-left: 10px; */
+    margin-top: 120px;
+    /* background-color: black; */
     display: flex;
-    background-color: gray;
-    width: 180px;
-    height: auto;
+    width: 70%;
+    height: 100vh;
+    padding: 40px;
     flex-wrap: wrap;
-    gap: 20px;
-} */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
 
 .container-target{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: beige;
+    background-color: white;
     padding: 20px;    
-    width: 180px;
-    height: 250px;
+    width: 270px;
+    height: 280px;
     position: relative;
     border-radius: 15px;
     transition: transform 0.3s ease-in-out;
-    
+    margin-bottom: 30px;
     
 }
 .container-target:hover{
@@ -48,14 +54,23 @@
 }
 
 h3{
-    font-size: 14px;
+    font-size: 20px;
 }
 p{
     font-size: 12px;
 }
 
+.precio{
+
+font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Hacerlo negrita */
+  color: #d9534f; /* Un color llamativo, puedes usar un tono que contraste bien con el fondo */
+  margin-top: 17px; /* Espacio en la parte superior */
+  text-align: center; /* Alineación centrada */
+}
+
 .descripcion{
-    font-size: 12px;
+    font-size: 16px;
     text-decoration: none;
 }
 
@@ -73,4 +88,6 @@ p{
     background-color: orange;
     transition: 0.43s;
 }
+
+
 
