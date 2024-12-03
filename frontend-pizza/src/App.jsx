@@ -24,27 +24,20 @@ const App = () => {
       fetchProductos();
     }, [])
   return (
-    <div>
-      <header>
-      <NavBar />
-      </header>
-      <section className="Card-menu">
-      {productos.length > 0 ? (
-          productos.map((producto, index) => (
-            <CardMenu
-              key={index}
-              img={producto.imagen}      
-              descripcion={producto.descripcion}    
-              txtComida={producto.nombre || "Descripción no disponible"}
-              precio={producto.precio }
-            />
-          ))
-        ) : (
-          <p>No se encontraron productos.</p>
-        )}
-      </section>
-    </div>
-  )
-}
+    <CarritoProvider> {/* Envuelve todo con CarritoProvider */}
+      <Router>
+        <header>
+          <NavBar />
+        </header>
+
+        <Routes>
+          <Route path="/Acerca-de-nostros" element={<Inicio />} />
+          <Route path="/Menu" element={<MenuYCarrito /> } />
+          
+          </Routes>
+      </Router>
+    </CarritoProvider>  
+  );
+};
 
 export default App

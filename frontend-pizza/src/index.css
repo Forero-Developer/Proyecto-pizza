@@ -1,5 +1,11 @@
+/* src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tus estilos personalizados */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +16,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
 }
@@ -18,21 +25,8 @@ body {
   background: url('./assets/fondoPizza.jpg') no-repeat;
   background-size: cover;
 }
+
 a {
   text-decoration: none;
 }
 
-.Card-menu{
-  border-radius: 10px;
-  margin-left: 20px;
-  margin-top: 140px;
-  background-color: gray;
-  display: flex;
-  width: 68%;
-  padding: 40px;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  justify-content: center;
-  /* height: 100vh; */
-  gap: 30px;
-}
