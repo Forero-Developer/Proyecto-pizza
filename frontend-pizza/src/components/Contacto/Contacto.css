@@ -1,0 +1,111 @@
+/* General styles for the Inicio component */
+.inicio-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Establece la altura mínima en 100% de la pantalla */
+  padding: 0;
+  background: linear-gradient(to right, black, transparent), url('./src/assets/NAVINICIO.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Título */
+.tituloContacto {
+  color: orange; /* Color destacado para el título */
+  font-size: 5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  font-weight: normal; /* Estilo de fuente estándar */
+  z-index: 100;
+  position: absolute;
+  top: 15%; /* Ajusta la posición del título */
+  left: 5%;
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 1 */
+.subtituloContacto {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.9em; /* Tamaño del texto */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  font-weight: normal; /* Estilo de fuente estándar */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 25%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 1 */
+.textoContacto {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.6em; /* Tamaño del texto */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 40%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Contenedor de información de contacto */
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: flex-start;
+  margin-top: 2rem;
+  font-size: 1.1em;
+  position: absolute;
+  top: 79%; /* Ajusta la posición de los iconos de contacto */
+  left: 22%;
+  transform: translate(-10%, -50%);
+}
+
+/* Estilo de cada item de contacto */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para los iconos */
+.contact-icon {
+  font-size: 2em;
+  color: #FFD19B; /* Color similar al dorado del subtítulo */
+  margin-right: 10px;
+}
+
+/* Estilo para el texto de contacto */
+.contact-text {
+  color: #FFEBD6; /* Color dorado */
+}
+
+/* Contenedor del mapa */
+.map-container {
+  position: fixed; /* Fija el mapa a la pantalla */
+  bottom: 20px; /* Ajusta la distancia desde el fondo */
+  left: 20px; /* Ajusta la distancia desde la izquierda */
+  width: 300px; /* Ajusta el tamaño del mapa */
+  height: 300px; /* Ajusta la altura del mapa */
+  z-index: 10; /* Asegura que el mapa esté por encima de otros elementos */
+  border-radius: 10px; /* Da bordes redondeados al contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el contenedor */
+}
+
+/* Ajustar el iframe */
+.map-container iframe {
+  width: 100%; /* Se adapta al tamaño del contenedor */
+  height: 100%; /* Se adapta al tamaño del contenedor */
+  border: none; /* Quita el borde del iframe */
+}
+
