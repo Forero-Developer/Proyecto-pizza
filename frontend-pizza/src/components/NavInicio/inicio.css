@@ -1,49 +1,180 @@
 /* General styles for the Inicio component */
 .inicio-container {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    font-family: 'Arial', sans-serif;
-    padding: 10px;
-    border-radius: 10px;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  /* Header styles */
-  .inicio-header {
-    background-color: #ff6347; /* Tomato color */
-    /* padding: 20px; */
-    color: white;
-    width: 900px;
-    margin-top: 100px;
-    border-radius: 10px;
-  }
-  
-  /* Main heading styling */
-  .inicio-header h1 {
-    font-size: 3.5em;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  /* Slogan styling */
-  .eslogan {
-    font-size: 1.5em;
-    font-style: italic;
-    color: #ffe4e1; /* Light pinkish color */
-    margin-top: 20px;
-  }
-  
-  /* Image styling */
-  img {
-    width: 900px;
-    border-radius: 10px;  
-    height: 300px;
-  
-  }
-  
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, black, transparent), url('./src/assets/NAVINICIO.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Título */
+.titulo {
+  color: orange; /* Color destacado para el título */
+  font-size: 5em; 
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  font-weight: normal; /* Estilo de fuente estándar */
+  z-index: 100;
+  position: absolute;
+  top: 15%; /* Ajusta la posición del título */
+  left: 5%;
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 1*/
+.subtitulo1 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.4em; /* Aumento de 0.2em */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  font-weight: normal; /* Estilo de fuente estándar */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 22%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 1 */
+.texto1 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.3em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 29%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 2*/
+.subtitulo2 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.4em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 37%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 2 */
+.texto2 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.3em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 45%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 3*/
+.subtitulo3 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.4em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 54%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 3 */
+.texto3 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.3em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 62%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 4*/
+.subtitulo4 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.4em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 71%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 4 */
+.texto4 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.3em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 78%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Subtítulo 5*/
+.subtitulo5 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.4em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.8; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 86%; /* Ajusta la posición del subtítulo */
+  left: 13%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}
+
+/* Texto 5 */
+.texto5 {
+  color: #FFEBD6; /* Color dorado para el subtítulo */
+  font-size: 1.3em; /* Aumento de 0.2em */
+  font-weight: normal; /* Estilo de fuente estándar */
+  font-family: 'Chewy', sans-serif; /* Fuente Chewy */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 60%; /* Limita el ancho del texto */
+  position: absolute;
+  top: 93%; /* Ajusta la posición del subtítulo */
+  left: 14%; /* Ajusta el desplazamiento horizontal */
+  transform: translate(-10%, -50%);
+}

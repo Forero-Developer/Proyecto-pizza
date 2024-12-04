@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Inicio from './components/NavInicio/inicio';
+import Contacto from './components/Contacto/Contacto';
 import { CarritoProvider } from './components/Carrito/ContextoCarrito'; // Asegúrate de que esta ruta es correcta
 import MenuYCarrito from './components/Carrito/MenuYcarrito';
 
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/Acerca-de-nostros" element={<Inicio />} />
           <Route path="/Menu" element={<MenuYCarrito /> } />
+          <Route path="/Contacto" element={<Contacto />} />
           
           </Routes>
       </Router>
