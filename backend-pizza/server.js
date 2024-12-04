@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // Permite solicitudes desde el frontend (ajusta según tu configuración)
 app.use(cors({
-    origin: 'http://localhost:5173', // URL del frontend
+    origin: '*', // URL del frontend
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
 }));
 
