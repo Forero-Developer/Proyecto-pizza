@@ -1,6 +1,7 @@
 import { useCarrito } from "./ContextoCarrito";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPizzaSlice, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 const Carrito = () => {
   const { carrito, eliminarProducto, resetearCarrito } = useCarrito();
 
@@ -8,6 +9,14 @@ const Carrito = () => {
     return carrito
       .reduce((total, producto) => total + producto.precio * producto.cantidad, 0)
       .toFixed(2);
+  };
+
+  const finalizarCompra = () => {
+    // Muestra el mensaje de "Pedido Enviado"
+    alert("¡Pedido enviado! Gracias por tu compra.");
+    
+    // Vacía el carrito
+    resetearCarrito();
   };
 
   return (
@@ -52,7 +61,10 @@ const Carrito = () => {
             </div>
 
             <div className="flex gap-3">
-              <button className="flex-1 bg-orange-500 text-white py-3 px-4 rounded-xl font-medium hover:bg-orange-600 transition-colors">
+              <button
+                onClick={finalizarCompra}
+                className="flex-1 bg-orange-500 text-white py-3 px-4 rounded-xl font-medium hover:bg-orange-600 transition-colors"
+              >
                 Finalizar Compra
               </button>
               <button

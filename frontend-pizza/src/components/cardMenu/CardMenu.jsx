@@ -1,6 +1,9 @@
 import "./cardMenu.css";
-const CardMenu = ({ producto, agregarAlCarrito }) => {   // Recibe 'producto' como prop
-  const { img = "./src/assets/pizzaaa.jpg", nombre, descripcion, precio } = producto; // Desestructura
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+const CardMenu = ({ producto, agregarAlCarrito, eliminarProducto }) => { // Añadimos eliminarProducto
+  const { img = "./src/assets/pizzaaa.jpg", nombre, descripcion, precio, id_producto } = producto;
 
   return (
     <div className="contenedor-padre">
@@ -11,12 +14,20 @@ const CardMenu = ({ producto, agregarAlCarrito }) => {   // Recibe 'producto' co
           <p className="descripcion">{descripcion}</p>
           <p className="precio">${precio}</p>
         </div>
-        <button 
-          className="bton-carrito"  
-          onClick={() => agregarAlCarrito(producto)}  // Pasa el producto al carrito
-        >
-          Agregar al carrito
-        </button>
+        <div className="botones">
+          <button 
+            className="bton-carrito"  
+            onClick={() => agregarAlCarrito(producto)}  // Llama a la función de agregar
+          >
+            Agregar al carrito
+          </button>
+          <button 
+            className="bton-eliminar"  
+            onClick={() => eliminarProducto(producto.id_producto)}  // Llama a la función de eliminar
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+        </div>
       </div>
     </div>
   );
