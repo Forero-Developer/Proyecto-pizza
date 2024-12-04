@@ -1,47 +1,52 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPizzaSlice, faTimes } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPizzaSlice, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const AgregarProducto = () => {
-  const [nombre, setNombre] = useState('')
-  const [descripcion, setDescripcion] = useState('')
-  const [precio, setPrecio] = useState('')
-  const [isOpen, setIsOpen] = useState(false)
+  const [nombre, setNombre] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('enviando datos al backend', { nombre, descripcion, precio });
-
-    const nuevoProducto = {
-      nombre,
-      descripcion,
-      precio: parseFloat(precio),
-    };
 
     try {
+      const nuevoProducto = {
+        nombre,
+        descripcion,
+        precio: parseFloat(precio),
+      };
+
+      setLoading(true);
+
       const response = await fetch('http://localhost:3000/api/productos', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // Aquí estaba un error tipográfico (json estaba mal escrito)
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(nuevoProducto),
       });
 
+      setLoading(false);
+
       if (!response.ok) {
-        throw new Error('Error al guardar el producto en la Base de datos');
+        throw new Error('Error al guardar el producto en la base de datos');
       }
 
-      const data = await response.json();
-      alert('Producto guardado correctamente', data);
+      alert('Producto guardado correctamente');
       setNombre('');
       setDescripcion('');
       setPrecio('');
       setIsOpen(false);
     } catch (error) {
-      console.error('Error al guardar el producto!!!', error); // Asegúrate de usar `error` aquí
+      console.error('Error al guardar el producto:', error);
+      setError(error.message);
+      setLoading(false);
     }
-};
-
+  };
 
   return (
     <>
@@ -54,7 +59,7 @@ const AgregarProducto = () => {
       </button>
 
       {isOpen && (
-        <div className="modal-overlay flex justify-center items-center p-4">
+        <div className="modal-overlay fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
           <div className="modal-content bg-white rounded-lg shadow-xl w-full max-w-md p-6 relative">
             <button
               onClick={() => setIsOpen(false)}
@@ -65,6 +70,8 @@ const AgregarProducto = () => {
             </button>
 
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Agregar nuevo producto</h2>
+
+            {error && <p className="text-red-500">{error}</p>}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -110,8 +117,9 @@ const AgregarProducto = () => {
                 <button
                   type="submit"
                   className="w-full bg-orange-500 text-white py-2 px-4 rounded-md font-medium hover:bg-orange-600 transition-colors"
+                  disabled={loading}
                 >
-                  Guardar
+                  {loading ? 'Guardando...' : 'Guardar'}
                 </button>
               </div>
             </form>
@@ -119,7 +127,7 @@ const AgregarProducto = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default AgregarProducto
+export default AgregarProducto;
