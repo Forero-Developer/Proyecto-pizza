@@ -163,23 +163,47 @@ app.post('/api/productos', (req, res) => {
 });
 
 // Ruta para eliminar un producto, accesible para todos
-app.delete('/api/productos/:id', (req, res) => {
+app.delete('/api/productos/:id', async (req, res) => {
     const { id } = req.params;
 
-    const SQL_QUERY = 'DELETE FROM productos WHERE id_producto = ?';
+    try {
+        // Primero, eliminar el precio asociado en la tabla 'precios'
+        const SQL_QUERY_PRECIO = 'DELETE FROM precios WHERE id_producto = ?';
 
-    DB.query(SQL_QUERY, [id], (err, result) => {
-        if (err) {
-            console.error('Error eliminando el producto: ', err);
-            return res.status(500).json({ error: 'Error al eliminar el producto' });
-        }
+        DB.query(SQL_QUERY_PRECIO, [id], (err, result) => {
+            if (err) {
+                console.error('Error al eliminar el precio: ', err);
+                return res.status(500).json({ error: 'Error al eliminar el precio' });
+            }
 
-        if (result.affectedRows === 0) {
-            return res.status(404).json({ error: 'Producto no encontrado' });
-        }
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ error: 'Precio no encontrado para este producto' });
+            }
 
-        res.status(200).json({ mensaje: 'Producto eliminado exitosamente' });
-    });
+            console.log(`Precio de producto con ID: ${id} eliminado`);
+
+            // Ahora, eliminar el producto de la tabla 'productos'
+            const SQL_QUERY_PRODUCTO = 'DELETE FROM productos WHERE id_producto = ?';
+
+            DB.query(SQL_QUERY_PRODUCTO, [id], (err, result) => {
+                if (err) {
+                    console.error('Error al eliminar el producto: ', err);
+                    return res.status(500).json({ error: 'Error al eliminar el producto' });
+                }
+
+                if (result.affectedRows === 0) {
+                    return res.status(404).json({ error: 'Producto no encontrado' });
+                }
+
+                console.log(`Producto con ID: ${id} eliminado`);
+
+                res.status(200).json({ mensaje: 'Producto y precio eliminados correctamente' });
+            });
+        });
+    } catch (error) {
+        console.log('Error al eliminar el producto y su precio: ', error);
+        return res.status(500).json({ error: 'Error en el servidor' });
+    }
 });
 
 // Iniciar el servidor
