@@ -6,6 +6,32 @@
 @tailwind utilities;
 
 /* Tus estilos personalizados */
+
+/* Agrega estos estilos en tu archivo CSS global */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  z-index: 50; /* Asegúrate de que el overlay esté por encima de las imágenes */
+}
+
+.modal-content {
+  position: relative;
+  z-index: 100; /* Modal sobre el fondo oscuro */
+}
+
+.images-container img {
+  transition: transform 0.3s ease-in-out; /* Transición suave para el movimiento */
+}
+
+.modal-overlay .images-container img {
+  transform: translateZ(-10px); /* Mueve las imágenes hacia atrás */
+  z-index: -1; /* Pone las imágenes detrás del fondo */
+}
+
 * {
   margin: 0;
   padding: 0;

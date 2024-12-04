@@ -3,7 +3,7 @@ import NavBar from './components/NavBar/NavBar';
 import Inicio from './components/NavInicio/inicio';
 import { CarritoProvider } from './components/Carrito/ContextoCarrito'; // Asegúrate de que esta ruta es correcta
 import MenuYCarrito from './components/Carrito/MenuYcarrito';
-
+import AgregarProducto from './components/AgregarProductos/AgregarProducto';
 const App = () => {
   return (
     
@@ -19,10 +19,9 @@ const App = () => {
           <Route path="/Menu" element={<MenuYCarrito /> } />
           
           </Routes>
-          <div className="bg-red-500 p-8 text-white">
-      <h1>¡TailwindCSS está funcionando!</h1>
-    </div>
+          
       </Router>
+      <AgregarProducto/>
     </CarritoProvider>  
     
   );
